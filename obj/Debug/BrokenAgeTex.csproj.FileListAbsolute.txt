@@ -1,7 +1,0 @@
-C:\Users\mehme\source\repos\BrokenAgeTex\BrokenAgeTex\bin\Debug\BrokenAgeTex.exe.config
-C:\Users\mehme\source\repos\BrokenAgeTex\BrokenAgeTex\bin\Debug\BrokenAgeTex.exe
-C:\Users\mehme\source\repos\BrokenAgeTex\BrokenAgeTex\bin\Debug\BrokenAgeTex.pdb
-C:\Users\mehme\source\repos\BrokenAgeTex\BrokenAgeTex\obj\Debug\BrokenAgeTex.csproj.AssemblyReference.cache
-C:\Users\mehme\source\repos\BrokenAgeTex\BrokenAgeTex\obj\Debug\BrokenAgeTex.csproj.CoreCompileInputs.cache
-C:\Users\mehme\source\repos\BrokenAgeTex\BrokenAgeTex\obj\Debug\BrokenAgeTex.exe
-C:\Users\mehme\source\repos\BrokenAgeTex\BrokenAgeTex\obj\Debug\BrokenAgeTex.pdb
