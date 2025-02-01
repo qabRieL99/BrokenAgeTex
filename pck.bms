@@ -1,0 +1,50 @@
+# Broken Age .pck files
+# qabRieL99 / 2025
+
+get size asize
+math size - 0xC
+goto size
+get files short
+get FTsize long
+get DATAsize long
+goto DATAsize
+
+for i = 0 < files
+    get FULLNAME basename
+    savepos offset
+    getdstring dummy 0x14
+    get size long
+    get size2 long
+    get NAMEsize long
+    getdstring dummy 0xA
+    savepos TMP
+    get key byte
+    goto TMP
+    
+    if key <= 0x80
+        set key = 0x80
+    endif
+    
+    get FILEoffset long
+    math FILEoffset + 0x1e
+    getdstring name NAMEsize
+    
+    # Simple XOR decryption without memory file
+    set j 0
+    set decoded_name string ""
+    for j = 0 < NAMEsize
+        getvarchr byte name j
+        math byte ^ key
+        putvarchr decoded_name j byte
+    next j
+    
+    # Clean up the filename
+    string decoded_name R "\x00+" ""
+    string decoded_name R "[\x01-\x1F]" ""
+    string decoded_name R "[\\/:*?\"<>|]" "_"
+    
+    # Build path and extract
+    string FULLNAME + "/"
+    string FULLNAME + decoded_name
+    log FULLNAME FILEoffset size
+next i
